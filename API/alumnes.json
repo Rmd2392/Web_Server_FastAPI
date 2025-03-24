@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "nom": "Anna",
+        "cognom": "Martínez",
+        "data": { "dia": 12, "mes": 5, "any": 2004 },
+        "email": "2024_anna.martinez@iticbcn.cat",
+        "feina": false,
+        "curs": "DAW1"
+    },
+    {
+        "id": 2,
+        "nom": "Jordi",
+        "cognom": "Pérez",
+        "data": { "dia": 23, "mes": 9, "any": 2003 },
+        "email": "2023_jordi.perez@iticbcn.cat",
+        "feina": true,
+        "curs": "DAW2"
+    },
+    {
+        "id": 3,
+        "nom": "Laia",
+        "cognom": "Gómez",
+        "data": { "dia": 3, "mes": 1, "any": 2005 },
+        "email": "2024_laia.gomez@iticbcn.cat",
+        "feina": false,
+        "curs": "DAM1"
+    },
+    {
+        "id": 4,
+        "nom": "Marc",
+        "cognom": "Ruiz",
+        "data": { "dia": 17, "mes": 7, "any": 2002 },
+        "email": "2023_marc.ruiz@iticbcn.cat",
+        "feina": true,
+        "curs": "DAM2"
+    },
+    {
+        "id": 5,
+        "nom": "Núria",
+        "cognom": "Soler",
+        "data": { "dia": 30, "mes": 11, "any": 2003 },
+        "email": "2024_nuria.soler@iticbcn.cat",
+        "feina": false,
+        "curs": "DAW1"
+    }
+]
