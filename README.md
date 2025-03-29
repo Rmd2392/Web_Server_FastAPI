@@ -43,7 +43,7 @@ API/
 ```
 ---
 
-## 📚 Objetivo de la práctica
+## Objetivo de la práctica
 
 - Trabajar con estructuras de datos (listas, diccionarios).
 - Practicar lectura/escritura de archivos JSON.
