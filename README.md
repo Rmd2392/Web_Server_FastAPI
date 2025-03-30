@@ -12,6 +12,7 @@ Este proyecto contiene dos partes diferenciadas:
 API/
 ├── alumnes.json          # Archivo donde se guardan los alumnos
 ├── esquelet.py           # Aplicación de consola (Parte 1)
+├── main.py               # Servidor FastAPI (Parte 2)
 └── README.md             # Este documento
 ```
 
@@ -43,9 +44,33 @@ API/
 ```
 ---
 
+##  Parte 2: API REST con FastAPI (main.py)
+
+Funcionalidades:
+- Mostrar mensaje inicial en /
+- Contar total de alumnos en /alumnes/
+- Ver alumno por ID en /id/{id}
+- Añadir nuevo alumno en /alumne/ (con ID automático)
+- Borrar alumno por ID en /del/{id}
+
+
+Pruebas desde el navegador:
+
+    http://127.0.0.1:8000/ =  Devuelve mensaje de bienvenida
+
+    http://127.0.0.1:8000/alumnes/ =  Devuelve el número total de alumnos
+
+    http://127.0.0.1:8000/id/1 =  Devuelve los datos del alumno con ID = 1
+
+    http://127.0.0.1:8000/docs =  Abre Swagger UI para probar los endpoints
+
+El formato de los alumnos es el mismo que en la parte 1
+
+---
+
 ## Objetivo de la práctica
 
-- Trabajar con estructuras de datos (listas, diccionarios).
+- Trabajar con estructuras de datos (listas, d =iccionarios).
 - Practicar lectura/escritura de archivos JSON.
 - Crear una API REST básica.
 - Relacionar una aplicación por consola y un servidor web usando el mismo archivo de datos.
