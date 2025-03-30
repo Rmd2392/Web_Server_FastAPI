@@ -83,7 +83,7 @@ Práctica realizada por Ricardo Martín Díaz  DAW 1A (CURSO 24/25)
 
 ---
 
-##  Notas para el profesor
+##  Notas
 
 - El archivo `alumnes.json` contiene datos iniciales con 15 alumnos.
 - Todos los campos están generados según el curso (2023/2024).
