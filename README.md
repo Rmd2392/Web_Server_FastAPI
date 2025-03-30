@@ -55,9 +55,8 @@ Funcionalidades:
 - Añadir nuevo alumno en /alumne/ (con ID automático)
 - Borrar alumno por ID en /del/{id}
 
-
-``` Pruebas desde el navegador:
-
+##  Pruebas desde el navegador:
+```
     http://127.0.0.1:8000/ =  Devuelve mensaje de bienvenida
 
     http://127.0.0.1:8000/alumnes/ =  Devuelve el número total de alumnos
