@@ -44,7 +44,9 @@ API/
 ```
 ---
 
-##  Parte 2: API REST con FastAPI (main.py)
+##  Parte 2: API REST con FastAPI (`main.py`)
+
+El formato de los alumnos es el mismo que en la parte 1
 
 Funcionalidades:
 - Mostrar mensaje inicial en /
@@ -54,7 +56,7 @@ Funcionalidades:
 - Borrar alumno por ID en /del/{id}
 
 
-Pruebas desde el navegador:
+``` Pruebas desde el navegador:
 
     http://127.0.0.1:8000/ =  Devuelve mensaje de bienvenida
 
@@ -63,14 +65,13 @@ Pruebas desde el navegador:
     http://127.0.0.1:8000/id/1 =  Devuelve los datos del alumno con ID = 1
 
     http://127.0.0.1:8000/docs =  Abre Swagger UI para probar los endpoints
-
-El formato de los alumnos es el mismo que en la parte 1
+```
 
 ---
 
 ## Objetivo de la práctica
 
-- Trabajar con estructuras de datos (listas, d =iccionarios).
+- Trabajar con estructuras de datos (listas, diccionarios).
 - Practicar lectura/escritura de archivos JSON.
 - Crear una API REST básica.
 - Relacionar una aplicación por consola y un servidor web usando el mismo archivo de datos.
