@@ -3,7 +3,11 @@
         "id": 1,
         "nom": "Anna",
         "cognom": "Martínez",
-        "data": { "dia": 12, "mes": 5, "any": 2004 },
+        "data": {
+            "dia": 12,
+            "mes": 5,
+            "any": 2004
+        },
         "email": "2024_anna.martinez@iticbcn.cat",
         "feina": false,
         "curs": "DAW1"
@@ -12,7 +16,11 @@
         "id": 2,
         "nom": "Jordi",
         "cognom": "Pérez",
-        "data": { "dia": 23, "mes": 9, "any": 2003 },
+        "data": {
+            "dia": 23,
+            "mes": 9,
+            "any": 2003
+        },
         "email": "2023_jordi.perez@iticbcn.cat",
         "feina": true,
         "curs": "DAW2"
@@ -21,7 +29,11 @@
         "id": 3,
         "nom": "Laia",
         "cognom": "Gómez",
-        "data": { "dia": 3, "mes": 1, "any": 2005 },
+        "data": {
+            "dia": 3,
+            "mes": 1,
+            "any": 2005
+        },
         "email": "2024_laia.gomez@iticbcn.cat",
         "feina": false,
         "curs": "DAM1"
@@ -30,7 +42,11 @@
         "id": 4,
         "nom": "Marc",
         "cognom": "Ruiz",
-        "data": { "dia": 17, "mes": 7, "any": 2002 },
+        "data": {
+            "dia": 17,
+            "mes": 7,
+            "any": 2002
+        },
         "email": "2023_marc.ruiz@iticbcn.cat",
         "feina": true,
         "curs": "DAM2"
@@ -39,9 +55,144 @@
         "id": 5,
         "nom": "Núria",
         "cognom": "Soler",
-        "data": { "dia": 30, "mes": 11, "any": 2003 },
+        "data": {
+            "dia": 30,
+            "mes": 11,
+            "any": 2003
+        },
         "email": "2024_nuria.soler@iticbcn.cat",
         "feina": false,
         "curs": "DAW1"
+    },
+    {
+        "id": 6,
+        "nom": "Laura",
+        "cognom": "Martín",
+        "data": {
+            "dia": 15,
+            "mes": 3,
+            "any": 1999
+        },
+        "email": "2023_laura.martin@iticbcn.cat",
+        "feina": true,
+        "curs": "DAM2"
+    },
+    {
+        "id": 7,
+        "nom": "Carlos",
+        "cognom": "Sánchez",
+        "data": {
+            "dia": 8,
+            "mes": 10,
+            "any": 1995
+        },
+        "email": "2023_carlos.sanchez@iticbcn.cat",
+        "feina": true,
+        "curs": "DAW2"
+    },
+    {
+        "id": 8,
+        "nom": "Lucía",
+        "cognom": "Navarro",
+        "data": {
+            "dia": 21,
+            "mes": 6,
+            "any": 2000
+        },
+        "email": "2024_lucia.navarro@iticbcn.cat",
+        "feina": false,
+        "curs": "DAW1"
+    },
+    {
+        "id": 9,
+        "nom": "David",
+        "cognom": "Ramírez",
+        "data": {
+            "dia": 2,
+            "mes": 4,
+            "any": 1994
+        },
+        "email": "2023_david.ramirez@iticbcn.cat",
+        "feina": true,
+        "curs": "DAM2"
+    },
+    {
+        "id": 10,
+        "nom": "Eva",
+        "cognom": "Moreno",
+        "data": {
+            "dia": 19,
+            "mes": 12,
+            "any": 2001
+        },
+        "email": "2024_eva.moreno@iticbcn.cat",
+        "feina": false,
+        "curs": "DAM1"
+    },
+    {
+        "id": 11,
+        "nom": "Joel",
+        "cognom": "Requena",
+        "data": {
+            "dia": 4,
+            "mes": 9,
+            "any": 2000
+        },
+        "email": "2023_joel.requena@iticbcn.cat",
+        "feina": true,
+        "curs": "ASIX2"
+    },
+    {
+        "id": 12,
+        "nom": "Sara",
+        "cognom": "Fernández",
+        "data": {
+            "dia": 25,
+            "mes": 2,
+            "any": 2003
+        },
+        "email": "2024_sara.fernandez@iticbcn.cat",
+        "feina": false,
+        "curs": "ASIX1"
+    },
+    {
+        "id": 13,
+        "nom": "Adrià",
+        "cognom": "Camps",
+        "data": {
+            "dia": 14,
+            "mes": 7,
+            "any": 1991
+        },
+        "email": "2023_adria.camps@iticbcn.cat",
+        "feina": true,
+        "curs": "ASIX2"
+    },
+    {
+        "id": 14,
+        "nom": "Marta",
+        "cognom": "Pons",
+        "data": {
+            "dia": 1,
+            "mes": 11,
+            "any": 2004
+        },
+        "email": "2024_marta.pons@iticbcn.cat",
+        "feina": false,
+        "curs": "ASIX1"
+    },
+    {
+        "id": 15,
+        "nom": "Roger",
+        "cognom": "Vidal",
+        "data": {
+            "dia": 6,
+            "mes": 5,
+            "any": 1993
+        },
+        "email": "2023_roger.vidal@iticbcn.cat",
+        "feina": true,
+        "curs": "ASIX2"
     }
+
 ]

@@ -1,25 +1,30 @@
 ### Imports ################################################## 
-import os   #per neteja la pantalla
-import json #per desar i llegir dades en format JSON
+import os   # Para limpiar la pantalla
+import json # Para guardar y leer datos JSON
 
 #Variables ###################################################
 
-#Nom del fitxer on desar/carregar dades
+# Nombre del fichero donde guardar/cargar datos
 nom_fitxer = "alumnes.json"
 
+# Lista de alumnos
 alumnes = []
+
+# Variable para controlar el siguiente ID disponible
+# (se incrementa cada vez que se añade un nuevo alumno)
+id_seguent = 1
 
 
 ### menu() ###################################################
-#   Aquesta funció mostra el menú d'opcions per pantalla. 
-#   
-#   Retorna (str): l'opció escollida per l'usuari
+#   Esta función muestra el menú de opciones por pantalla.  
+#   Devuelve (str): la opción elegida por el usuario.
 ##############################################################
 def menu():
-    #Netejem la pantalla
+
+    #Limpiamos la pantalla
     os.system('cls')            
     
-    #Mostrem les diferents opcions
+    #Mostramos las diferentes opciones disponibles
     print("Gestió alumnes")
     print("-------------------------------")
     print("1. Mostrar alumnes")
@@ -33,27 +38,26 @@ def menu():
     print("\n0. Sortir\n\n\n")
     print(">", end=" ")
 
-    #i retornem l'opció escollida per l'usuari
+    #y devolvemos la opción elegida por el usuario
     return input()
 
 
 
-### Programa ################################################
+### Programa principal ################################################
 
 #Fins a l'infinit (i més enllà)
 while True:
     
-    #Executem una opció funció del que hagi escollit l'usuari
+    #Ejecutamos una opción función de lo que haya escogido el usuario
     match menu():
 
-        # Mostrar alumnes ##################################
+        # 1. Mostrar alumnos ##################################
         case "1":
             os.system('cls')
             print("Mostrar alumnes")
             print("-------------------------------")
             
 
-            #Introduiu el vostre codi per mostrar alumnes aquí
             if not alumnes:
                 print("No hi ha alumnes carregats.")
             else:
@@ -61,37 +65,92 @@ while True:
                     print(f"ID: {alumne['id']} | Nom: {alumne['nom']} {alumne['cognom']}")
             input("\nPrem Enter per continuar...")
     
-        # Afegir alumne ##################################
+        # 2. Añadir alumno ##################################
         case "2":
             os.system('cls')
             print("Afegir alumne")
             print("-------------------------------")
             
-            #Introduiu el vostre codi per afegir un alumne aquí
-                
-            input()
-    
-        # Veure alumne ##################################
+            nom = input("Nom:")    
+            cognom = input("Cognom:")
+
+            dia = int(input("Dia de naixement:"))
+            mes = int(input("Mes de naixement:"))
+            any = int(input("Any de naixement:"))
+
+            treballa = input("Treballa? (si/no):").lower() == "si"
+            curs = input("curs (DAW1, DAW2, DAM1, DAM2, ASIX1, ASIX2)")
+
+            # Generar email según el curso (1º -> 2024, 2º -> 2023)
+            any_email = "2024" if "1" in curs else "2023"
+            email = f"{any_email}_{nom.lower()}.{cognom.lower()}@iticbcn.cat"
+
+            alumne = {
+                "id": id_seguent,
+                "nom": nom,
+                "cognom": cognom,
+                "data": {
+                    "dia": dia,
+                    "mes": mes,
+                    "any": any
+                },
+                "email": email,
+                "feina": treballa,
+                "curs": curs
+            }
+
+            alumnes.append(alumne)
+            id_seguent += 1
+            print(f"Alumne afegit: {alumne}")
+            input("\nPrem Enter per continuar...")
+
+        # 3. Ver alumno ##################################
         case "3":
             os.system('cls')
             print("Veure alumne")
             print("-------------------------------")
             
-            #Introduiu el vostre codi per veure un alumne aquí
+            id_buscat = int(input("Introduïu l'ID de l'alumne: "))
+            alumne_trobat = False
 
-            input()
+            for alumne in alumnes:
+                if alumne["id"] == id_buscat:
+                    alumne_trobat = True
+                    print(f"ID: {alumne['id']}")
+                    print(f"Nom: {alumne['nom']} {alumne['cognom']}")
+                    print(f"Data de naixement: {alumne['data']['dia']}/{alumne['data']['mes']}/{alumne['data']['any']}")
+                    print(f"Email: {alumne['email']}")
+                    print(f"Treballa: {'Sí' if alumne['feina'] else 'No'}")
+                    print(f"Curs: {alumne['curs']}")
+                    break
+                
+            if not alumne_trobat:
+                print("No s'ha trobat cap alumne amb aquest ID.")
 
-        # Esborrar alumne ##################################
+            input("\nPrem Enter per continuar...")
+
+        # 4. Borrar alumno ##################################
         case "4":
             os.system('cls')
             print("Esborrar alumne")
             print("-------------------------------")
           
-            #Introduiu el vostre codi per esborrar un alumne aquí
-  
-            input()
+            id_borrar = int(input("Introduïu l'ID de l'alumne a esborrar: "))
+            alumne_trobat = False
 
-        # Desar a fitxer ##################################
+            for alumne in alumnes:
+                if alumne["id"] == id_borrar:
+                    alumnes.remove(alumne)
+                    alumne_trobat = True
+                    print(f"Alumne amb ID {id_borrar} esborrat.")
+                    break
+
+            if not alumne_trobat:
+                print("No s'ha trobat cap alumne amb aquest ID.")
+
+            input("\nPrem Enter per continuar...")
+
+        # 5. Guardar en fichero ##################################
         case "5":
             os.system('cls')
             print("Desar a fitxer")
@@ -109,18 +168,26 @@ while True:
             input("\nPrem Enter per continuar...")
 
 
-        # Llegir fitxer ##################################
+        # 6. Leer fichero ##################################
         case "6":    
             os.system('cls')
             print("Llegir fitxer")
             print("-------------------------------")
 
+            
             try:
                 with open(nom_fitxer, "r", encoding="utf-8") as f:
                     alumnes = json.load(f)
+                
                 print(f"S'han carregat {len(alumnes)} alumnes des de {nom_fitxer}.")
-                print("Dades carregades:")
-                print(alumnes)
+
+                # Buscar el ID más alto y preparar el siguiente
+                if alumnes:
+                    id_seguent = max(alumne["id"] for alumne in alumnes) + 1
+                else:
+                    id_seguent = 1
+
+                print("Dades carregades correctament.")
                 
             except FileNotFoundError:
                 print("El fitxer no existeix.")
@@ -133,15 +200,15 @@ while True:
 
       
 
-        # Sortir ##################################
+        # 0. Salir ##################################
         case "0":
             os.system('cls')
             print("Adeu!")
 
-            #Trenquem el bucle infinit
+            #Rompemos el bucle infinito
             break
 
-        #Qualsevol altra cosa #####################   
+        # Opción incorrecta #####################   
         case _:
             print("\nOpció incorrecta\a")            
             input()
