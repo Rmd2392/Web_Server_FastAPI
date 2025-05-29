@@ -7,7 +7,7 @@ import os
 app = FastAPI()
 
 # Ruta del archivo donde se guardan los alumnos
-nom_fitxer = "alumnes.json"
+ruta_fitxer = "alumnes.json"
 
 # -------------------------------
 # Definimos el modelo de dataNaixement y Alumne con Pydantic (BaseModel)
@@ -30,15 +30,14 @@ class Alumne(BaseModel):
 
 # Leer alumnos desde el fichero
 def llegir_alumnes():
-    if os.path.exists(nom_fitxer):
-        with open(nom_fitxer, "r", encoding="utf-8") as f:
-            alumnes.clear()
-            alumnes.extend(json.load(f))
-    return alumnes
+    if os.path.exists(ruta_fitxer):
+        with open(ruta_fitxer, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return []
 
 # Guardar alumnos en el fichero
 def guardar_alumnes(alumnes):
-    with open(nom_fitxer, "w", encoding="utf-8") as f:
+    with open(ruta_fitxer, "w", encoding="utf-8") as f:
         json.dump(alumnes, f, indent=4, ensure_ascii=False)
 
 # -------------------------------
