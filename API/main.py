@@ -16,12 +16,16 @@ alumnes = []
 id_seguent = 1
 
 # -------------------------------
-# Definimos el modelo de Alumne con Pydantic
+# Definimos el modelo de dataNaixement y Alumne con Pydantic (BaseModel)
 # -------------------------------
+class DataNaixement(BaseModel):
+    dia: int
+    mes: int
+    any: int
 class Alumne(BaseModel):
     nom: str
     cognom: str
-    data: dict  # Cambiado a dict para simplificar
+    data: DataNaixement
     email: str
     feina: bool
     curs: str
