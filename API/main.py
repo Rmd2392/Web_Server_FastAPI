@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import json
 import os
+from collections import OrderedDict
 
 # Inicializamos la aplicación FastAPI
 app = FastAPI()
@@ -83,8 +84,7 @@ def afegir_alumne(nou_alumne: Alumne):  # Usamos BaseModel aquí
         nou_id = max(alumne["id"] for alumne in alumnes) + 1
     else:
         nou_id = 1
-    alumne_dict = nou_alumne.dict()  # Convertimos el modelo a dict
-    alumne_dict["id"] = nou_id
+    alumne_dict = OrderedDict(id = nou_id, **nou_alumne.dict())  # Convertimos el modelo a dict y añadimos el ID
     alumnes.append(alumne_dict)
     guardar_alumnes(alumnes)
     return {"missatge": "Alumne afegit correctament", "id": nou_id}
